@@ -19,13 +19,15 @@ public class Thor extends Hero{
 
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
-        if (deafening) System.out.println("Босс получил оглушение от Тора и не может ударить. ");
-        else {
-            if (getHealth() > 0) {
-                setHealth() = getHealth() + boss.getDamage();
-                setHealth() = getHealth() - (boss.getHealth() + (boss.getDamage() / 5) * heroes.length) - (boss.getDamage() / 5);
+        boolean thorHammer=RPG_Game.random.nextBoolean();
+        if (thorHammer){
+            boss.setDamage(0);
+            System.out.println("Boss оглушён");
+        }else{
+            boss.setDamage(50);
+        }
 
 
             }
-        }}}
+        }
 
